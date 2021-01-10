@@ -1,0 +1,84 @@
+<p>user-model works!</p>
+<div class="container">
+    <h3>User Data</h3>
+    <div class="form-group">
+        <div class="mb-3">
+            
+            <input [(ngModel)]="username" type="text" class="form-controll" placeholder="Name"/>
+        </div>
+        <div class="mb-3">
+           
+            <input [(ngModel)]="email" type="text" class="form-controll" placeholder="Email"/>
+        </div>
+        <div class="mb-3">
+            
+            <input [(ngModel)]="password" type="text" class="form-controll" placeholder="Password"/>
+        </div>
+        <!-- if tag -->
+        <div class="mb-3" *ngIf="username == 'Aster'">
+            <button (click) = "UserData()" class="btn btn-outline-primary">Save</button>
+        </div>
+        
+        <div class="mb-3" *ngIf="username == 'Govind'">
+            <button (click) = "UserData()" class="btn btn-outline-success">Save</button>
+        </div>
+        
+        <div class="mb-3" *ngIf="username == 'Kedar'">
+            <button (click) = "UserData()" class="btn btn-outline-danger">Save</button>
+        </div>
+        
+        <div class="mb-3" *ngIf="username == '' || username == '0'">
+            <label>Enter right name!!!</label>
+        </div>
+        
+    </div>
+
+<!-- ------------------------------------------------------------------------------ -->
+
+<div class="row">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{username}}</h5>
+        
+        <hr/>
+        <div>
+            <h5 class="card-text">User Detail</h5>
+            <p class="card-text">{{username}}</p>
+            <p class="card-text">{{email}}</p>
+            <p class="card-text">{{password}}</p>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------------------------------ -->
+<!-- switch tag -->
+<div>
+<select [ngSwitch]="username">
+    <option *ngSwitchCase="'Aster'"> your name is {{username}} color blue</option>
+    <option *ngSwitchCase="'Govind'"> your name is {{username}} color green</option>
+    <option *ngSwitchCase="'Kedar'"> your name is {{username}} color red</option>
+    <option *ngSwitchDefault> Pick again</option>
+</select>
+</div>
+
+<!-- for tag -->
+<h4>index and first</h4>
+<div *ngFor = "let color of colors; index as i; first as f">
+    <h5>{{i}} {{color}} {{f}}</h5>
+</div>
+<hr/>
+<h4>index and last</h4>
+<div *ngFor = "let color of colors; index as i; last as l">
+    <h5>{{i}} {{color}} {{l}}</h5>
+</div>
+<hr/>
+<h4>index and odd</h4>
+<div *ngFor = "let color of colors; index as i; odd as o">
+    <h5>{{i}} {{color}} {{o}}</h5>
+</div>
+<hr/>
+<h4>index and even</h4>
+<div *ngFor = "let color of colors; index as i; even as e">
+    <h5>{{i}} {{color}} {{e}}</h5>
+</div>
+</div>

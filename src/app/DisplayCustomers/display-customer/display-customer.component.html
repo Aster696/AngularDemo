@@ -1,0 +1,24 @@
+<p>display-customer works!</p>
+
+<div class = "container">
+    <div class="d-flex justify-content-center">
+        <h4>Cusomer Details</h4>
+    </div>
+    <div class="row">
+        <div *ngFor="let customers of customer"  class="col-md-3">
+            <div class="card" routerLink='/displayCustomer/{{customers.custId}}'>
+                <div class="card-body">
+                    <h5 class="card-subtitle mb-2 text-muted">{{customers.custId}}</h5>
+                    <h5 class="card-title">Detail of: {{customers.custName}}</h5>
+
+                    <hr/>
+                    <div>
+                        <p class="card-text">Name: {{customers.custName}}</p>
+                        <p class="card-text">Name: {{customers.custEmail}}</p>
+                        <p class="card-text">Name: {{customers.custAddr}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
